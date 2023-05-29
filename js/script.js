@@ -2,73 +2,68 @@
 
 console.log(`JS OK`);
 
-//Prendo gli elementi dal DOM
+// DATI PRELIMINARI
 
-const priceTicket = document.getElementById(`price`);
-
-console.log(priceTicket);
-
-const noDiscount = document.getElementById(`no-discount`);
+const name = document.getElementById(`user`)
 
 const kilometers = document.getElementById(`kilometers`);
 
 const age = document.getElementById(`age`);
 
-//Chiedo all'utente quanti chilometri vuole percorrere
+const button = document.querySelector(`button`)
 
-const askKilometers = parseInt(prompt(`Quanti chilometri vuole percorrere?` , 5));
+const result = document.getElementById(`result`);
 
-console.log(askKilometers);
+const priceTicket = document.getElementById(`price`);
 
-//Chiedo all'utente l'età
+const noDiscount = document.getElementById(`no-discount`);
 
-const askAge = parseInt(prompt(`Quanti anni ha?` , 25));
+// DATI CONCRETI
 
-console.log(askAge);
+button.addEventListener(`click` , function(){
 
-//inserisco il prezzo del bigletto
+    const askname = `Andrea `
 
-const ticket = 0.21;
+    console.log(askname)
 
-console.log(ticket);
+    const askKilometers = parseInt(kilometers.value);
 
-//Calcolo il prezzo del bigletto in base ai chilometri
+    console.log(askKilometers);
 
-let totalPrice = (askKilometers * ticket).toFixed(2);
+    const askAge = parseInt(age.value);
 
-//Calcolo lo sconto del 20% per i minori di 18 anni
+    console.log(askAge);
 
-const underDiscount = 0.8;
+    const ticket = 0.21;
 
-console.log(underDiscount);
+    console.log(ticket);
 
-//Calcolo lo sconto del 40% per i minori di 65 anni
+    let totalPrice = (askKilometers * ticket).toFixed(2);
 
-const overDiscount = 0.6;
+    const underDiscount = 0.8;
+    
+    console.log(underDiscount);
+    
+    const overDiscount = 0.6;
+    
+    console.log(overDiscount)
+    
+    let discount = totalPrice;
+    console.log("sono adulto");
+    
+    if(askAge < 18){
+       discount = (totalPrice * underDiscount).toFixed(2);
+       console.log("sono minorenne");
+    }else if(askAge > 65){
+       discount = (totalPrice * overDiscount).toFixed(2);
+       console.log("sono anziano");
+    }
+    
+    console.log(discount); 
+    
+    result.innerHTML = `${askname} ${askAge} ${discount}`
+})
 
-console.log(overDiscount)
 
-//Applico gli sconti 
 
-let discount = totalPrice;
-console.log("sono in mezzo");
 
-if(askAge < 18){
-   discount = (totalPrice * underDiscount).toFixed(2);
-   console.log("sono minorenne");
-}else if(askAge > 65){
-   discount = (totalPrice * overDiscount).toFixed(2);
-   console.log("sono anziano");
-}
-
-console.log(discount);
-
-//inserire gli elementi nel DOM
-
-priceTicket.innerText = discount;
-
-noDiscount.innerText = totalPrice;
-
-kilometers.innerText = askKilometers;
-
-age.innerHTML = askAge;
