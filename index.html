@@ -13,34 +13,65 @@
     <script defer src="js/script.js"></script>
 </head>
 <body>
-    <main>
-
         <!-- informazioni utente -->
-        <section>
-            <!-- nome -->
-            <label for="user">Dimmi il tuo nome</label>
-            <br>
-            <input id="user" type="text" value="Andrea">
-            <br>
-            <!-- chilometri -->
-            <label for="kilometers">Quanti chilometri deve fare?</label>
-            <br>
-            <input id="kilometers" type="number" value="50">
-            <br>
-            <!-- età -->
-            <label for="age">Quanti anni ha?</label>
-            <br>
-            <input id="age" type="number" value="25">
-            <br>
-            <!-- bottone -->
-            <button>Genera</button>
+        <h1 class="text-center text-white">Calcola il prezzo del tuo biglietto</h1>
+        <section class="container text-center">
+            <div class="card">
+                <div class="card-body border border-dark rounded">
+                    <div class="row mb-4">
+                        <div class="col-4">
+                             <!-- nome -->
+                            <label class="mb-3" for="user">Dimmi il tuo nome</label>
+                            <br>
+                            <input class="text-center" id="user" type="text" value="Andrea">
+                        </div>
+                        <div class="col-4">
+                             <!-- chilometri -->
+                            <label class="mb-3" for="kilometers">Quanti chilometri deve fare?</label>
+                            <br>
+                            <input class="text-center" id="kilometers" type="number" value="50">
+                        </div>
+                        <div class="col-4">
+                            <!-- età -->
+                            <label class="mb-3" for="age">Quanti anni ha?</label>
+                            <br>
+                            <input class="text-center" id="age" type="number" value="25">
+                        </div>
+                    </div>
+                    <!-- bottone -->
+                    <button type="button" class="btn btn-outline-success me-5">Genera</button>
+                    <button type="button" class="btn btn-outline-danger">Annulla</button>
+                </div>
+            </div>
         </section>
 
         <!-- biglietto finale -->
-        <section>
-            <!-- risultato -->
-            <p id="result"></p>
+        <h2 class="text-center text-white mb-3">Il tuo biglietto</h2>
+        <section class="container text-center d-none">
+            <div class="card">
+                <div class="card-body border border-dark rounded">
+                    <h3>Dettaglio passeggeri</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4 CSS-bg-grey">
+                            <!-- nome -->
+                            <h4>Nome passeggiero</h4>
+                            <p class="fs-5" id="ask-name"></p>
+                        </div>
+                        <div class="col-4">
+                            <!-- ticket -->
+                            <h4>Offerta</h4>
+                            <p class="fs-5" id="base-ticket"></p>
+                        </div>
+                        <div class="col-4">
+                            <!-- risultato -->
+                            <h4>Prezzo</h4>
+                            <p class="fs-5" id="result"></p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
         </section>
-    </main>
 </body>
 </html>

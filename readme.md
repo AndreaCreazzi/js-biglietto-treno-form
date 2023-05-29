@@ -27,4 +27,10 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 6. Calcolo lo sconto del 20% per i minori di 18 anni
 7. Calcolo lo sconto del 40% per i minori di 65 anni
 8. Applico gli sconti
-9. inserire l'elemento nel DOM
+9. Inserisco due input nel DOM
+10. Inserisco un bottone nel DOM
+11. Inserisco i dati concreti nel button
+12. Verifico se funziona
+13. Applico classi di Bootstrap nel DOM
+14. Finisco di inserire lo stile personalizzato
+15. Concludo l'esercizio

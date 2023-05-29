@@ -4,7 +4,11 @@ console.log(`JS OK`);
 
 // DATI PRELIMINARI
 
-const name = document.getElementById(`user`)
+const user = document.getElementById(`user`);
+
+const askUser = document.getElementById(`ask-name`);
+
+const base = document.getElementById(`base-ticket`);
 
 const kilometers = document.getElementById(`kilometers`);
 
@@ -18,13 +22,18 @@ const priceTicket = document.getElementById(`price`);
 
 const noDiscount = document.getElementById(`no-discount`);
 
+const display = document.querySelector(`.d-none`);
+
 // DATI CONCRETI
 
 button.addEventListener(`click` , function(){
+    
+    display.classList.add(`d-block`)
+    display.classList.remove(`d-none`)
 
-    const askname = `Andrea `
+    let userName = user.value
 
-    console.log(askname)
+    let baseTicket = `Biglietto standard`
 
     const askKilometers = parseInt(kilometers.value);
 
@@ -46,23 +55,29 @@ button.addEventListener(`click` , function(){
     
     const overDiscount = 0.6;
     
-    console.log(overDiscount)
+    console.log(overDiscount);
     
     let discount = totalPrice;
     console.log("sono adulto");
     
     if(askAge < 18){
        discount = (totalPrice * underDiscount).toFixed(2);
+       baseTicket = `Biglietto under`;
        console.log("sono minorenne");
     }else if(askAge > 65){
        discount = (totalPrice * overDiscount).toFixed(2);
+       baseTicket = `Biglietto over`;
        console.log("sono anziano");
     }
     
     console.log(discount); 
     
-    result.innerHTML = `${askname} ${askAge} ${discount}`
-})
+    result.innerHTML = discount ;
+
+    askUser.innerHTML = userName;
+
+    base.innerHTML = baseTicket;
+});
 
 
 
