@@ -28,10 +28,16 @@ const display = document.querySelector(`.d-none`);
 
 button.addEventListener(`click` , function(){
     
+    // display biglietto
+
     display.classList.add(`d-block`)
     display.classList.remove(`d-none`)
+    
+    // valore nome
 
     let userName = user.value
+
+    // valore ticket
 
     let baseTicket = `Biglietto standard`
 
@@ -57,6 +63,8 @@ button.addEventListener(`click` , function(){
     
     console.log(overDiscount);
     
+    // under and over
+
     let discount = totalPrice;
     console.log("sono adulto");
     
@@ -70,8 +78,12 @@ button.addEventListener(`click` , function(){
        console.log("sono anziano");
     }
     
+    // controllo discount
+
     console.log(discount); 
     
+    // elementi inseriti nel DOM
+
     result.innerHTML = discount ;
 
     askUser.innerHTML = userName;
